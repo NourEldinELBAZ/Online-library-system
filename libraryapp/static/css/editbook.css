@@ -1,0 +1,114 @@
+/* Updated CSS with adjusted margin for the container */
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    background-color: rgb(236, 230, 230);
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    align-items: center;
+  }
+  .page-name{
+    font-size: 28px;
+    padding: 0;
+    margin: 0;
+    width: auto;
+  }
+  nav {
+    font-size: 20px;
+    padding: 0;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    right: 0;
+  }
+  ul {
+    padding: 0;
+    right: 0;
+    padding-right: 50px;
+  
+    margin: 0;
+    list-style-type: none;
+  }
+  li {
+    margin-left: 10px;
+    display: inline-block;
+  
+  }
+  li a{
+      color: black;
+      text-decoration: none;
+      font-size: 21px;
+      font-weight: 700;
+      padding-left: 20px;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 70px auto 10px auto ; /* Adjusted margin to create space between header and container */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 50px auto; 
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form textarea {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form input[type="submit"] {
+    width: calc(100% - 16px);
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+  }

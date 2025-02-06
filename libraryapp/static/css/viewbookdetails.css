@@ -1,0 +1,131 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.main-section {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+}
+  
+
+.left-section {
+  padding: 10px;
+  text-align: center;
+  object-fit: cover;
+  margin-right: 30px;
+}
+
+
+.book-cover-container{
+  padding-bottom: 50px;
+  object-fit: contain;
+  width: 300px;
+  padding: 0;
+}
+.book-cover {
+  width: 300px;
+}
+
+
+button {
+  font-size: 18px;
+  width: 300px;
+  height: 50px;
+  margin: 0;
+  margin-top: 10px;
+  color:azure;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 0px;
+  cursor: pointer;
+  transition: background-color 0.7s;
+}
+
+.borrow-book-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.borrow-book-button {
+  background-color: rgb(78, 125, 155);
+}
+
+.borrow-book-button:hover {
+  background-color: rgb(54, 142, 197);
+}
+
+.borrow-book-button:active {
+  background-color: rgb(40, 129, 189);
+}
+
+.borrow-book-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.edit-book-button {
+  background-color: rgb(78, 125, 155);
+}
+
+.delete-book-button {
+  background-color: rgb(211, 61, 61);
+}
+
+.button-link{
+  display: block;
+  text-decoration: none;
+  margin: auto;
+  margin-bottom: 10px;
+  color: white;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(54, 142, 197);
+}
+
+.delete-book-button:hover {
+  background-color: rgb(240, 39, 39);
+}
+
+.book-name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.author-container {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.rating-paragraph {
+  font-size: 22px;
+}
+
+.book-description {
+  color: rgb(102, 101, 101);
+  font-size: 20px;
+  word-wrap: break-word;
+  width: 500px;
+}
+
+
+.more-details {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid rgb(236, 230, 230);
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: rgb(236, 230, 230);
+}

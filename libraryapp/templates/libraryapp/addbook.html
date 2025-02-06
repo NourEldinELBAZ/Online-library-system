@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="{% static 'css/addbook.css' %}">
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+    <script src="{% static 'js/header.js' %}"></script>
+</head>
+<body>
+
+    <script>
+        createHeader('Add Book', true);
+    </script>
+
+<div class="container">
+    <form id="addBookForm" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="name">Book Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required>
+        
+        <label for="cover">Cover:</label>
+        <input type="file" id="cover" name="cover" accept="image/*" required>
+        <hr>
+
+        <button type="submit">Add Book</button>
+    </form>
+    <div id="message"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %} <!-- Load static files -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Edit Book Details</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/editbook.css' %}">
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+    <script src="{% static 'js/header.js' %}"></script>
+</head>
+<body>
+
+    <script>
+        createHeader('Edit Book', true);
+    </script>
+
+    <div class="container">
+        <h2>Edit Book Details</h2>
+        <form id="editForm" method="post" action="{% url 'editbook' book.id %}">
+            {% csrf_token %}
+            <label for="bookName">Book Name:</label>
+            <input type="text" id="bookName" name="bookName" value="{{ book.name }}" required>
+            
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="{{ book.author }}" required>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required>{{ book.description }}</textarea>
+            
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" value="{{ book.category }}" required>
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    <!-- <script src="{% static 'JS/editbook.js' %}"></script> Use static template tag for JavaScript -->
+</body>
+</html>

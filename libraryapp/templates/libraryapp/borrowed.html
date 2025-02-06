@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrowed Books</title>
+    <link rel="stylesheet" href="{% static 'css/borrowed.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <script src="{% static 'js/header.js' %}"></script>
+</head>
+<body>
+
+    <script>
+        createHeader('Borrowed Books', false);
+    </script>
+
+    <div class="container">
+        <h1>Borrowed Books</h1>
+
+        <!-- Messages block -->
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <div id="book-list">
+            {% for book in borrowed_books %}
+                <div class="book">
+                    <h2>{{ book.name }}</h2>
+                    <p>Author: {{ book.author }}</p>
+                    <p>{{ book.description }}</p>
+                    <img src="{{ book.cover.url }}" alt="{{ book.name }} Cover">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

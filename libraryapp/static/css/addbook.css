@@ -1,0 +1,111 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    background-color: rgb(236, 230, 230);
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    align-items: center;
+  }
+  .page-name{
+    font-size: 28px;
+    padding: 0;
+    margin: 0;
+    width: auto;
+  }
+  nav {
+    font-size: 20px;
+    padding: 0;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    right: 0;
+  }
+  ul {
+    padding: 0;
+    right: 0;
+    padding-right: 50px;
+  
+    margin: 0;
+    list-style-type: none;
+  }
+  li {
+    margin-left: 10px;
+    display: inline-block;
+  
+  }
+  li a{
+      color: black;
+      text-decoration: none;
+      font-size: 21px;
+      font-weight: 700;
+      padding-left: 20px;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    margin-top: 100px;
+    padding: 20px;
+  }
+  
+  .container h2 {
+    margin-bottom: 20px;
+  }
+  
+  
+  #addBookForm {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  textarea,
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    background-color: rgb(78, 125, 155);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: rgb(54, 142, 197);
+  }
+  
+  
+  #message {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  

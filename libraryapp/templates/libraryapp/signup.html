@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body id="loginbody">
+  <div class="wrapper">
+    <h1 id="loginh1">Welcome newbie</h1>
+    <p id="loginp">We are glad to have a special member like you</p>
+    
+    <!-- Messages block -->
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    
+    <form id="signupForm" method="post" action="{% url 'signup' %}">
+      {% csrf_token %}
+      <input type="text" id="username" name="username" placeholder="Enter username" required>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" name="confirm_password" placeholder="Confirm password" required>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+      <input type="checkbox" id="isAdmin" name="is_admin">
+      <label for="isAdmin" style="margin-right: 3px;">Admin</label>
+      <button type="submit" id="signupButton">Sign up</button>
+    </form>
+    <p class="or" id="loginp">
+      ----- or continue with -----
+    </p>
+    <div class="icons">
+      <i class="fab fa-google"></i>
+      <i class="fab fa-github"></i>
+      <i class="fab fa-facebook"></i>
+    </div>
+  </div>
+</body>
+</html>

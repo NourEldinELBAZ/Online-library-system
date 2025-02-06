@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.homeheader {
+    background-color: rgb(236, 230, 230);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.homelogo {
+    width: 15%;
+    height: 15%;
+}
+
+.homenavbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding-left: 20px;
+}
+
+.homenavbar a:hover{
+    color: gray;
+}
+
+
+#homeintro {
+    text-align: center;
+    color: rgb(78, 125, 155);
+    
+}
+#hometop {
+    padding: 50px;
+    font-size: 2.1em;
+    font-weight: 650;
+    display: flex;
+}
+
+#startbutton {
+    color: white;
+    background-color:rgb(78, 125, 155);
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    transition: 0.7s ease;
+}
+
+#startbutton:hover{
+    background-color:rgb(54, 142, 197);
+    transform: scale(1.2);
+}
+#about {
+    margin-top: 50px;
+    padding-top: 50px;
+    
+}
+#abouttext {
+    font-size: 1.1em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card {
+    font-weight: 900;
+    background-color: #fff;
+    width: 21.25em;
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 25%);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px;
+    transition: 0.8s ease;
+  
+  }
+  .card:hover {
+    transform: scale(1.2);
+  }
+  
+  .homefooter {
+    background-color: grey;
+    color: black;
+    padding: 2em;
+    display: flex;
+    font-size: 1.2em;
+    font-weight: 800;
+  }
+
+
+  
+  #loginbody{
+    background: #dfe9f5;
+  }
+  .wrapper{
+    width: 330px;
+    padding: 2rem 0 1rem 0;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  #loginh1{
+    font-size: 2rem;
+    color: #07001f;
+  }
+  #loginp{
+    margin-bottom: 1.7rem;
+  }
+  form input{
+    width: 85%;
+    outline: none;
+    border: none;
+    background: #dfe9f5;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .recover{
+    text-align: right;
+    font-size: 0.8rem;
+    margin: 0.2rem 1.7rem 0 0;
+  }
+  .recover a{
+    text-decoration: none;
+    color: #07001f;
+  }
+  #loginbutton{
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    padding: 8px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 85%;
+    background: tomato;
+    color: #fff;
+    cursor: pointer;
+  }
+  #loginbutton:hover{
+    background: rgba(122, 30, 30, 0.767);
+  }
+
+  #signupButton{
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    padding: 8px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 85%;
+    background: tomato;
+    color: #fff;
+    cursor: pointer;
+  }
+  #signupButton:hover{
+    background: rgba(122, 30, 30, 0.767);
+  }
+
+
+  .or{
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  .icons i{
+    color: #07001f;
+    padding: 00.8rem 1.5rem;
+    border-radius: 10px;
+    margin-left: .9rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 2px solid #dfe9f5;
+  }
+  .icons i:hover{
+    color: #fff !important;
+    background: #07001f;
+    transition: 1s;
+  }
+  .icons i:first-child{
+    color: green;
+  }
+  .icons i:last-child{
+    color: blue;
+  }
+  .not-member{
+    font-size: 0.8rem;
+    margin-top: 1.4rem;
+  }
+  .not-member a{
+    color: tomato;
+    text-decoration: none;
+  }
+  #logina:hover{
+    text-decoration: underline;
+  }
+  
+

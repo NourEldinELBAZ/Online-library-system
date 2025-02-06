@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link rel="stylesheet" href="{% static 'css/viewbookdetails.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <script src="{% static 'js/header.js' %}"></script>
+</head>
+
+<body>
+
+  <section class="main-section">
+    <div class="left-section">
+      <div class="book-cover-container">
+        <img class="book-cover" id="book-cover" src="{{ book.cover.url }}" alt="Book Cover">
+      </div>
+
+      {% if user.is_authenticated %}
+          {% if user.is_staff %}
+
+            <script>
+              createHeader('Book Details', true);
+            </script>
+
+            <a class="button-link" href="{% url 'editbook' book.id %}" style="background-color: white;">
+                <button class="edit-book-button" id="editBookButton">Edit</button>
+            </a>
+            <form id="deleteForm{{ book.id }}" method="post" action="{% url 'delete_book' book.id %}" style="display: none;">
+              {% csrf_token %}
+              <input type="hidden" name="book_id" value="{{ book.id }}">
+          </form>
+          <button class="delete-book-button" onclick="return confirm('Are you sure you want to delete this book?')" form="deleteForm{{ book.id }}">Delete</button>
+          {% else %}
+            <script>
+              createHeader('Book Details', false);
+            </script>
+
+            {% if book.is_borrowed %}
+              <form action="{% url 'return_book' book.id %}" method="post">
+                {% csrf_token %}
+                <button style="background-color: rgb(78, 125, 155);" onmouseover="this.style.backgroundColor='rgb(54, 142, 197)'" onmouseout="this.style.backgroundColor='rgb(78, 125, 155)'">Return</button>
+              </form>
+            {% else %}
+              <form action="{% url 'borrow_book' book.id %}" method="post">
+                {% csrf_token %}
+                <button class="borrow-book-button" id="borrowBookButton">Borrow</button>
+              </form>
+            {% endif %}
+          {% endif %}
+      {% endif %}
+    </div>
+    <div class="book-details">
+      <p id="book-name" class="book-name">{{ book.name }}</p>
+      <p class="author-container">By <span id="author-name" class="author-name">{{ book.author }}</span></p>
+      <div id="book-description" class="book-description">
+        {{ book.description }}
+      </div>
+      <br>
+      <div id="book-category" class="book-category">
+        Category: {{ book.category }}
+      </div>
+    </div>  
+  </section>
+
+</body>
+
+</html>

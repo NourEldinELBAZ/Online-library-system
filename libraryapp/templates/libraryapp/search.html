@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'css/table.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'css/search.css' %}">
+  <link rel="stylesheet" href="{% static 'css/viewbook.css' %}">
+  <script src="{% static 'js/header.js' %}"></script>
+  <title>Search Book</title>
+</head>
+<body>
+
+    <script>
+        createHeader('Search Books', false);
+    </script>
+
+    <div class="search">
+        <h2>Search Books</h2>
+        <form id="searchForm" method="GET" action="{% url 'search_books' %}">
+            <input type="text" id="search_query" name="search_query" placeholder="Search by Title, Author, or Category">
+            <select id="search_filter" name="search_filter">
+                <option value="title">Title</option>
+                <option value="author">Author</option>
+                <option value="category">Category</option>
+                <option value="">Title, Author, or Category</option>
+            </select><br>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <table id="bookTable" class="book-table">
+        <thead>
+            <tr>
+                <th>Book Cover</th>
+                <th>Details</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="bookTableBody">
+            {% for book in books %}
+            <tr>
+                <td>
+                    <img width="100px" src="{{ book.cover.url }}" alt="">
+                </td>
+                <td>{{ book.name }} by {{ book.author }}</td>
+                <td>
+                    <a href="{% url 'bookdetails' book.id %}">View Details</a>
+                    {% if not book.is_borrowed %}
+                        <form method="post" action="{% url 'borrow_book' book.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="borrow-book-button">Borrow</button>
+                        </form>
+                    {% else %}
+                        {% if book.borrowed_by == request.user %}
+                            <span class="borrowed-label">Borrowed</span>
+                        {% else %}
+                            <span class="borrowed-label">Not Available</span>
+                        {% endif %}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Add your JavaScript links here -->
+</body>
+</html>
